@@ -12,6 +12,7 @@ import day_1
     (99, "L99", 0),
     (0, "R14", 14),
     (14, "L82", 32),
+    (50, "R210", 60)
 ]) 
 def test_dail_turning(initial_number, dail_rotation, expected_position):
 
