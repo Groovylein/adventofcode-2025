@@ -19,3 +19,18 @@ def test_dail_turning(initial_number, dail_rotation, expected_position):
     new_position = day_1.rotate(initial_number, dail_rotation)
 
     assert new_position == expected_position
+
+@pytest.mark.parametrize("initial_number, dail_rotation, expected_counter", [
+    (50, "L68", 1),
+    (50, "R1000", 10),
+    (50, "L1000", 10),
+    (0, "L10", 0),
+    (0, "L101", 1),
+    (0, "R101", 1),
+    (95, "R60", 1),
+])
+def test_dail_tuning_counter(initial_number, dail_rotation, expected_counter):
+    day_1.count_zero_rotate = 0
+    day_1.rotate(initial_number, dail_rotation)
+
+    assert day_1.count_zero_rotate == expected_counter
